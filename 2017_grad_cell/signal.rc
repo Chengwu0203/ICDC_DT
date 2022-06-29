@@ -1,0 +1,110 @@
+Magic 271485
+Revision Verdi_S-2021.09
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort 1920 31 1920 1017 241 177
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / -i 0 "" "/home/chengwu/CIC_Contest_practice/105_2017_Distance_Transform/2017_grad_cell/DT.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 5
+
+; windowTimeUnit is used for zoom, cursor & marker
+; waveform viewport range
+zoom 0.000000 8192.000000
+cursor 109450550.000000
+marker 0.000000
+
+; visible top row signal index
+top 0
+; marker line index
+markerPos 34
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+
+aliasmapname DT.status
+
+aliasmapname DT.State
+nalias S2		3'b010		NULL
+nalias S3		3'b011		NULL
+nalias S0		3'b000		NULL
+nalias S1		3'b001		NULL
+nalias S4		3'b100		NULL
+nalias S5		3'b101		NULL
+
+addGroup "G1"
+activeDirFile "" "/home/chengwu/CIC_Contest_practice/105_2017_Distance_Transform/2017_grad_cell/DT.fsdb"
+addSignal -h 15 /testfixture/u_dut/clk
+addSignal -h 15 -holdScope reset
+addGroup "G2"
+addSignal -h 15 -UNSIGNED -HEX /testfixture/u_dut/status[2:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope next_status[2:0]
+addSignal -h 15 -holdScope work[2:0]
+addGroup "G3"
+addSignal -h 15 /testfixture/u_dut/sti_rd
+addSignal -h 15 -holdScope sti_addr[9:0]
+addSignal -h 15 -holdScope sti_di[15:0]
+addGroup "G4"
+addSignal -h 15 -UNSIGNED -UDEC /testfixture/u_dut/res_addr[13:0]
+addGroup "G5"
+addSignal -h 15 /testfixture/u_dut/res_rd
+addSignal -h 15 -holdScope res_di[7:0]
+addGroup "G6"
+addSignal -h 15 /testfixture/u_dut/res_wr
+addSignal -h 15 -holdScope res_do[7:0]
+addGroup "G7"
+addSignal -h 15 /testfixture/u_dut/x[6:0]
+addSignal -h 15 -holdScope y[6:0]
+addGroup "G8"
+addSignal -h 15 /testfixture/u_dut/a1[6:0]
+addSignal -h 15 -holdScope a2[6:0]
+addSignal -h 15 -holdScope a3[6:0]
+addSignal -h 15 -holdScope a4[6:0]
+addSignal -h 15 -holdScope a5[6:0]
+addSignal -h 15 -holdScope a6[6:0]
+addGroup "G9"
+addSignal -h 15 /testfixture/u_dut/count[2:0]
+addGroup "G10"
+addSignal -h 15 /testfixture/u_dut/data[7:0]
+addGroup "G11"
+addSignal -h 15 /testfixture/u_dut/done
+addGroup "G12"
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+activeDirFile "" "/home/chengwu/CIC_Contest_practice/105_2017_Distance_Transform/2017_grad_cell/DT.fsdb"
+
+GETSIGNALFORM_SCOPE_HIERARCHY_BEGIN
+getSignalForm close
+
+"/testfixture"
+
+SCOPE_LIST_BEGIN
+"/testfixture"
+"/testfixture/u_dut"
+SCOPE_LIST_END
+
+GETSIGNALFORM_SCOPE_HIERARCHY_END
+
+
